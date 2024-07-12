@@ -17,6 +17,7 @@ router.get('/', async () => 'Server is up and running!')
 router.group(() => {
   router.resource('professors', ProfessorsController).only(['store', 'show', 'update', 'destroy'])
   router.resource('students', StudentsController).only(['store', 'show', 'update', 'destroy'])
+  router.get('students/:id/classes', [StudentsController, 'getAllClasses'])
   router.resource('classes', ClassesController).only(['store', 'show', 'update', 'destroy'])
   router.resource('allocations', AllocationsController).only(['store', 'show', 'update', 'destroy'])
 })
