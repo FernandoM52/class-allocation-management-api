@@ -7,7 +7,7 @@ export const ClassFactory = factory
     return {
       classNumber: faker.string.numeric(),
       availability: faker.datatype.boolean(),
-      professorId: 1
+      professorId: faker.number.int({min: 1, max: 5})
     }
   })
   .relation('professor', () => ProfessorFactory)

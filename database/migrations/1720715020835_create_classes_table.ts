@@ -8,7 +8,7 @@ export default class extends BaseSchema {
       table.increments('id').notNullable()
       table.string('class_number').notNullable()
       table.integer('capacity').notNullable().defaultTo(35)
-      table.boolean('availability').notNullable()
+      table.boolean('availability').notNullable().defaultTo(true)
       table.integer('professor_id').unsigned().references('professors.id').notNullable()
       table.timestamp('created_at')
       table.timestamp('updated_at')
