@@ -4,10 +4,10 @@ import { ClassFactory } from './class_factory.js'
 import { StudentFactory } from './student_factory.js'
 
 export const AllocationFactory = factory
-  .define(Allocation, async ({ }) => {
+  .define(Allocation, async ({ faker }) => {
     return {
-      studentId: 1,
-      classId: 1
+      studentId: faker.number.int({min: 1, max: 15}),
+      classId: faker.number.int({min: 1, max: 5})
     }
   })
   .relation('student', () => StudentFactory)
