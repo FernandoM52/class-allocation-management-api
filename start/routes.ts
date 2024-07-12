@@ -7,6 +7,7 @@
 |
 */
 
+import AllocationsController from '#controllers/allocations_controller'
 import ClassesController from '#controllers/classes_controller'
 import ProfessorsController from '#controllers/professors_controller'
 import StudentsController from '#controllers/students_controller'
@@ -17,6 +18,6 @@ router.group(() => {
   router.resource('professors', ProfessorsController).only(['store', 'show', 'update', 'destroy'])
   router.resource('students', StudentsController).only(['store', 'show', 'update', 'destroy'])
   router.resource('classes', ClassesController).only(['store', 'show', 'update', 'destroy'])
- // router.resource('allocation',ProfessorsController).only()
+  router.resource('allocations', AllocationsController).only(['store', 'show', 'update', 'destroy'])
 })
   .prefix('/api')

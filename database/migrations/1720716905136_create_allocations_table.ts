@@ -8,6 +8,7 @@ export default class extends BaseSchema {
       table.increments('id').notNullable()
       table.integer('student_id').unsigned().references('students.id')
       table.integer('class_id').unsigned().references('classes.id')
+      table.integer('professor_id').unsigned().references('professors.id')
       table.timestamp('created_at')
       table.timestamp('updated_at')
     })

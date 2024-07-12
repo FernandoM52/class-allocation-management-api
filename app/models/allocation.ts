@@ -3,6 +3,7 @@ import { BaseModel, belongsTo, column } from '@adonisjs/lucid/orm'
 import type { BelongsTo } from '@adonisjs/lucid/types/relations'
 import Class from './class.js'
 import Student from './student.js'
+import Professor from './professor.js'
 
 export default class Allocation extends BaseModel {
   @column({ isPrimary: true })
@@ -13,6 +14,9 @@ export default class Allocation extends BaseModel {
 
   @column()
   declare classId: number
+
+  @column()
+  declare professorId: number
 
   @column.dateTime({ autoCreate: true })
   declare createdAt: DateTime
@@ -29,5 +33,10 @@ export default class Allocation extends BaseModel {
    foreignKey: 'classId',
   })
   declare class: BelongsTo<typeof Class>
+
+  @belongsTo(() => Professor, {
+   foreignKey: 'professorId',
+  })
+  declare profesor: BelongsTo<typeof Professor>
 }
 

@@ -7,7 +7,8 @@ export const AllocationFactory = factory
   .define(Allocation, async ({ faker }) => {
     return {
       studentId: faker.number.int({min: 1, max: 15}),
-      classId: faker.number.int({min: 1, max: 5})
+      classId: faker.number.int({ min: 1, max: 5 }),
+      professorId: faker.number.int({min: 1, max: 5})
     }
   })
   .relation('student', () => StudentFactory)
