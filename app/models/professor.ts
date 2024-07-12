@@ -1,7 +1,8 @@
 import { DateTime } from 'luxon'
-import { BaseModel, column, hasMany } from '@adonisjs/lucid/orm'
+import { BaseModel, belongsTo, column, hasMany } from '@adonisjs/lucid/orm'
 import Class from './class.js'
-import type { HasMany } from '@adonisjs/lucid/types/relations'
+import type { BelongsTo, HasMany } from '@adonisjs/lucid/types/relations'
+import Role from './role.js'
 
 export default class Professor extends BaseModel {
   @column({ isPrimary: true })
@@ -19,6 +20,9 @@ export default class Professor extends BaseModel {
   @column()
   declare birth: Date
 
+  @column()
+  declare roleId: number
+
   @column.dateTime({ autoCreate: true })
   declare createdAt: DateTime
 
@@ -29,4 +33,9 @@ export default class Professor extends BaseModel {
     foreignKey: 'professorId',
   })
   declare class: HasMany<typeof Class>
+
+  @belongsTo(() => Role, {
+   foreignKey: 'roleId',
+  })
+  declare role: BelongsTo<typeof Role>
 }

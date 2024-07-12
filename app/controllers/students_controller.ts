@@ -12,12 +12,7 @@ export default class StudentsController {
 
   async show({ params, response }: HttpContext) {
     const student = await Student.findByOrFail('id', params.id)
-    response.ok({
-      fullName: student.fullName,
-      email: student.email,
-      enrollment: student.enrollment,
-      birth: student.birth,
-    })
+    response.ok(student)
   }
 
   async update({ params, request, response }: HttpContext) {

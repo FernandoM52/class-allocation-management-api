@@ -12,12 +12,7 @@ export default class ProfessorsController {
 
   async show({ params, response }: HttpContext) {
     const professor = await Professor.findByOrFail('id', params.id)
-    response.ok({
-      fullName: professor.fullName,
-      email: professor.email,
-      enrollment: professor.enrollment,
-      birth: professor.birth,
-    })
+    response.ok(professor)
   }
 
   async update({ params, request, response }: HttpContext) {
