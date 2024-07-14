@@ -9,6 +9,8 @@ RUN npm install
 COPY . .
 
 RUN npm run build
+RUN cd build/
+RUN npm ci --omit="dev"
 
 EXPOSE 3333
-CMD [ "node", "bin/server.js" ]
+CMD [ "node", "build/bin/server.js" ]
