@@ -13,6 +13,8 @@ Esta API permite o gerenciamento de alocação de salas para professores e aluno
 - Consulta de alunos alocados em uma sala específica
 - Consulta de salas em que um aluno está alocado
 
+![nova_modelagem](https://github.com/user-attachments/assets/bf78d808-71c0-4854-ac5e-a192157b3276)
+
 ## Tecnologias Utilizadas
 
 - [AdonisJS](https://adonisjs.com/)
