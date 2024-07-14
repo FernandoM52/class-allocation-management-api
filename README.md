@@ -20,9 +20,9 @@ Esta API permite o gerenciamento de alocação de salas para professores e aluno
 
 ![AdonisJS](https://img.shields.io/badge/AdonisJS-5A45FF.svg?style=for-the-badge&logo=AdonisJS&logoColor=white)
 ![Node.JS](https://img.shields.io/badge/Node.js-5FA04E.svg?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![Typescript](https://img.shields.io/badge/TypeScript-3178C6.svg?style=for-the-badge&logo=TypeScript&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1.svg?style=for-the-badge&logo=PostgreSQL&logoColor=white)
 ![Lucid](https://img.shields.io/badge/Lucid-282C33.svg?style=for-the-badge&logo=Lucid&logoColor=white)
-
 
 ## Como Rodar o projeto
 
@@ -41,7 +41,22 @@ npm i
 
 ## Local
 
-3. Inicie o projeto:
+### Requisitos
+
+*Postgres:*
+Para rodar o projeto localmente, seja em ambiente de desenvolvimento ou de produção, é necessário que você tenha o PostgresSQL instalado na sua máquina. Para isso, basta acessar o link da documentação oficial do Postgres, escolher seu sistema operacional e seguir os passos para instalação: https://www.postgresql.org/download/
+
+*Variáveis de ambiente:*
+Para que a aplicação funcione corretamente e possa se comunicar com seu banco de dados é necessário criar o arquivo `.env` e adicionar as variáveis de ambiente necessárias. Note que há um arquivo `.env.example` na raiz do projeto para você se basear.
+
+### Opcional:
+Caso você queira popular o bando de dados antes de iniciar o projeto, execute o comando abaixo para gerar registros aleatórios das entidades no seu banco de dados.
+
+```
+node ace db:seed
+```
+
+3. Após instalação, inicie o projeto:
 
 ```
 npm run dev
